@@ -24,7 +24,7 @@ update your firewall with the port for that new database endpoint.
 | TCP | 3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380 | Internal | Cluster traffic |
 | TCP | 8001 | Internal, External | Traffic from application to RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
 | TCP | 8002, 8004 | Internal | System health monitoring |
-| TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
+| TCP | 8443 | Internal, External | Secure (HTTPS) access to the management admin console |
 | TCP | 8444, 9080 | Internal | For nginx <-> cnm_http/cm traffic |
 | TCP | 9081 | Internal, Active-Active | For Active-Active management |
 | TCP | 8070, 8071 | Internal, External | For metrics exported and managed by nginx |
@@ -39,21 +39,21 @@ Connection sources are:
 - External - The traffic is from client applications or external monitoring resources
 - Active-Active - The traffic is from clusters that host Active-Active databases
 
-## Changing the management web UI port
+## Changing the management admin console port
 
-If for any reason you want to use a custom port for the RS Web UI
+If for any reason you want to use a custom port for the RS admin console
 instead of the default port (8443), you can change the port. Before you
-change the RS Web UI port, make sure that the new port is not in
+change the RS admin console port, make sure that the new port is not in
 use by another process.
 
 {{< note >}}
-After you change the RS Web UI port, when you add a new node to the
-cluster you must connect to the web UI with the custom port number:
+After you change the RS admin console port, when you add a new node to the
+cluster you must connect to the admin console with the custom port number:
 
 `https://newnode.mycluster.example.com:`**`<nonstandard-port-number>`**
 {{% /note %}}
 
-To change the default port for the RS Web UI, on any node in the cluster run:
+To change the default port for the RS admin console, on any node in the cluster run:
 
 ```sh
 rladmin cluster config cm_port <new-port>

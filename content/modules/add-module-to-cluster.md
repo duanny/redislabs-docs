@@ -31,7 +31,7 @@ To get the latest features and fixes for a module, you must upgrade the module i
 
 To deploy an upgraded package:
 
-1. In the Redis Enterprise web UI, go to the: **settings**
+1. In the Redis Enterprise admin console, go to the: **settings**
 1. In **redis modules**, click **Add Module**.
 
     ![upgrade_module-1](/images/rs/upgrade_module-1.png?width=1600&height=956)
